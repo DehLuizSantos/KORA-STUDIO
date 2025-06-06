@@ -16,7 +16,8 @@ export const GlobalStyles = () => (
       body {
         margin: 0;
         padding: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Baumans', sans-serif;
+        scroll-behavior: smooth;
       }
 
       a {
@@ -31,6 +32,14 @@ export const GlobalStyles = () => (
       h5 {
         margin: 0;
         padding: 0;
+        font-family: 'Baumans', sans-serif;
+      }
+
+      p,
+      span {
+        margin: 0;
+        padding: 0;
+        font-family: 'Blinker', sans-serif;
       }
 
       button {

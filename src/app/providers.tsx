@@ -23,9 +23,6 @@ declare module '@emotion/react' {
       leaf: string
       primary: string
       secundary: string
-      tertiary: string
-      red: string
-      green: string
       grey: {
         300: string
         500: string
@@ -44,18 +41,15 @@ declare module '@emotion/react' {
 export function Providers({ children, session }: ProvidersProps) {
   const theme = {
     colors: {
-      white: '#F4F5F6',
-      dark: '#242529',
-      leaf: '#34353E',
+      white: '#E3E1E1',
+      dark: '#0E0F0E',
+      leaf: '#1E241F',
       grey: {
-        300: '#CDCCD1',
-        500: '#65656E',
+        300: '#A09E9E',
+        500: '#675B5B',
       },
-      primary: '#A7ABFF',
-      secundary: '#F79F75',
-      tertiary: '#B7735D',
-      red: '#BE2C3F',
-      green: '#2CBE64',
+      primary: '#641323',
+      secundary: '#1AFF00',
     },
     fonts: {
       xsmall: '12px',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Baumans, Blinker } from 'next/font/google'
 import '@mantine/core/styles.css'
 import '@mantine/charts/styles.css'
 import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
@@ -10,10 +10,15 @@ export const metadata: Metadata = {
   description: 'Dashboard and login module',
 }
 
-const roboto = Roboto({
-  subsets: ['latin'],
+const baumans = Baumans({
   variable: '--font-roboto',
   display: 'swap',
+  weight: '400',
+})
+const blinker = Blinker({
+  variable: '--font-roboto',
+  display: 'swap',
+  weight: '400',
 })
 
 export default function RootLayout({
@@ -22,11 +27,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='pt-BR' {...mantineHtmlProps} className={roboto.variable}>
+    <html
+      lang='pt-BR'
+      {...mantineHtmlProps}
+      className={(baumans.variable, blinker.variable)}
+    >
       <head>
         <ColorSchemeScript defaultColorScheme='dark' />
       </head>
-      <body className={`${roboto.variable}`}>
+      <body className={(baumans.variable, blinker.variable)}>
         <Providers>{children}</Providers>
       </body>
     </html>
