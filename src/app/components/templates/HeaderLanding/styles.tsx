@@ -44,6 +44,7 @@ export const NavMenu = styled.nav`
     display: flex;
     gap: 60px;
   }
+
   a {
     display: block;
     cursor: pointer;

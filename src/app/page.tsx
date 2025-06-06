@@ -1,5 +1,6 @@
 'use client'
 
+import Contato from './components/templates/Contato'
 import HeaderLandingPage from './components/templates/HeaderLanding'
 import LandingPageFirst from './components/templates/LandingPageFirst'
 import Orcamento from './components/templates/Orcamento'
@@ -13,6 +14,7 @@ export default function LandingPage() {
       <LandingPageFirst />
       <Portifolio />
       <Orcamento />
+      <Contato />
     </ContainerLandingPage>
   )
 }

@@ -34,6 +34,8 @@ declare module '@emotion/react' {
       medium: string
       large: string
       xlarge: string
+      xxlarge: string
+      xxxlarge: string
     }
   }
 }
@@ -57,6 +59,8 @@ export function Providers({ children, session }: ProvidersProps) {
       medium: '16px',
       large: '18px',
       xlarge: '28px',
+      xxlarge: '36px',
+      xxxlarge: '56px',
     },
   }
 

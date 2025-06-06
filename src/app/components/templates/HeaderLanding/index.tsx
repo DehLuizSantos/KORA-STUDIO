@@ -7,10 +7,11 @@ import Link from 'next/link'
 
 export default function HeaderLandingPage() {
   const [mobileOpened, setMobileOpened] = useState(false)
+
   const menuItens = [
     {
       name: 'PORTIFÓLIO',
-      link: '/#portifólio',
+      link: '/#portifolio',
     },
     {
       name: 'ORÇAMENTO',
@@ -23,7 +24,9 @@ export default function HeaderLandingPage() {
   ]
   return (
     <HeaderLanding>
-      <Image src='Logo.svg' alt='Kora studios' width={52} height={28} />
+      <Link href={'/'}>
+        <Image src='Logo.svg' alt='Kora studios' width={52} height={28} />
+      </Link>
 
       <Burger
         opened={mobileOpened}
@@ -52,7 +55,7 @@ export default function HeaderLandingPage() {
               />
               <NavMenu>
                 {menuItens.map((link) => (
-                  <Link key={link.name} href={`${link.link}`}>
+                  <Link key={link.name} href={`${link.link}`} className=''>
                     {link.name}
                   </Link>
                 ))}

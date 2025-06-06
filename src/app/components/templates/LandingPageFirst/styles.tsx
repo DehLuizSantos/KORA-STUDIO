@@ -7,6 +7,7 @@ export const LandingPageFirstWrapper = styled.section`
   align-items: center;
   justify-content: center;
   margin-top: 62px;
+
   &::before {
     content: '';
     position: absolute;
@@ -16,6 +17,10 @@ export const LandingPageFirstWrapper = styled.section`
     background-position: center;
     opacity: 0.6;
     z-index: 0;
+
+    @media (min-width: 800px) {
+      background-image: url('/images/background-first-page-desk.jpg');
+    }
   }
 
   > * {
@@ -23,4 +28,15 @@ export const LandingPageFirstWrapper = styled.section`
     z-index: 1;
   }
 `
-export const DescriptionTitle = styled.div``
+export const DescriptionTitle = styled.div`
+  h1 {
+    font-size: ${(props) => props.theme.fonts.xxlarge};
+    margin-bottom: 30px;
+    color: ${(props) => props.theme.colors.white};
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: ${(props) => props.theme.fonts.large};
+  }
+`

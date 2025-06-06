@@ -6,19 +6,19 @@ import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'Brain Agro',
-  description: 'Dashboard and login module',
+  title: 'KORA',
+  description: 'Studio fotográfico',
 }
 
 const baumans = Baumans({
-  variable: '--font-roboto',
+  variable: '--font-baumans',
   display: 'swap',
   weight: '400',
 })
 const blinker = Blinker({
-  variable: '--font-roboto',
+  variable: '--font-blinker',
   display: 'swap',
-  weight: '400',
+  weight: ['400'],
 })
 
 export default function RootLayout({
