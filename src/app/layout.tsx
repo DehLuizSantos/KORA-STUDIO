@@ -13,10 +13,12 @@ export const metadata: Metadata = {
 const baumans = Baumans({
   variable: '--font-baumans',
   display: 'swap',
+  subsets: ['latin'],
   weight: '400',
 })
 const blinker = Blinker({
   variable: '--font-blinker',
+  subsets: ['latin'],
   display: 'swap',
   weight: ['400'],
 })
