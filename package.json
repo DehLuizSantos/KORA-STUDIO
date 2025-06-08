@@ -1,5 +1,5 @@
 {
-  "name": "brain-agro",
+  "name": "kora-studio",
   "version": "0.1.0",
   "private": true,
   "prettier": {
@@ -29,12 +29,14 @@
     "@mantine/hooks": "^8.0.2",
     "@prisma/client": "^6.8.2",
     "@tanstack/react-query": "^5.79.0",
+    "keen-slider": "^6.8.6",
     "mantine-form-zod-resolver": "^1.2.1",
     "next": "15.3.2",
     "next-auth": "^4.24.11",
     "prisma": "^6.8.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-medium-image-zoom": "^5.2.14",
     "recharts": "^2.15.3",
     "sqlite3": "^5.1.7",
     "ts-node": "^10.9.2",

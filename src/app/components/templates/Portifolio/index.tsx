@@ -3,6 +3,7 @@ import { useState } from 'react'
 import MenuPortifolio from '../../moleculas/MenuPortifolio'
 import WrapperWhite from '../WrapperWhite'
 import { PortifolioWrapper } from './styles'
+import PortifolioCard from '../../organismos/PortifolioCard'
 
 export default function Portifolio() {
   const menuOptions = [
@@ -41,6 +42,7 @@ export default function Portifolio() {
           menuSelected={selected}
           data={menuOptions.map((menu) => `${menu.title} (${menu.quantidade})`)}
         />
+        <PortifolioCard date='MARÇO 25' type='COMERCIAL' title='DESIRE MERCH' />
       </WrapperWhite>
     </PortifolioWrapper>
   )

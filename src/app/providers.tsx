@@ -2,17 +2,18 @@
 
 import { ReactNode, useState } from 'react'
 import { MantineProvider } from '@mantine/core'
-import { SessionProvider } from 'next-auth/react'
-import { Session } from 'next-auth'
+// import { SessionProvider } from 'next-auth/react'
+// import { Session } from 'next-auth'
 import { ThemeProvider } from '@emotion/react'
 import { GlobalStyles } from '@/styles/styles'
 import { emotionTransform, MantineEmotionProvider } from '@mantine/emotion'
 import { RootStyleRegistry } from './EmotionRootStyleRegistry'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import 'keen-slider/keen-slider.min.css'
 
 interface ProvidersProps {
   children: ReactNode
-  session?: Session | null
+  // session?: Session | null
 }
 
 declare module '@emotion/react' {
@@ -40,7 +41,7 @@ declare module '@emotion/react' {
   }
 }
 
-export function Providers({ children, session }: ProvidersProps) {
+export function Providers({ children }: ProvidersProps) {
   const theme = {
     colors: {
       white: '#E3E1E1',
@@ -58,16 +59,16 @@ export function Providers({ children, session }: ProvidersProps) {
       small: '14px',
       medium: '16px',
       large: '18px',
-      xlarge: '28px',
-      xxlarge: '36px',
-      xxxlarge: '56px',
+      xlarge: '22px',
+      xxlarge: '28px',
+      xxxlarge: '36px',
     },
   }
 
   const [client] = useState(() => new QueryClient())
 
   return (
-    <SessionProvider session={session}>
+    <>
       <QueryClientProvider client={client}>
         <RootStyleRegistry>
           <MantineEmotionProvider>
@@ -84,6 +85,6 @@ export function Providers({ children, session }: ProvidersProps) {
           </MantineEmotionProvider>
         </RootStyleRegistry>
       </QueryClientProvider>
-    </SessionProvider>
+    </>
   )
 }
