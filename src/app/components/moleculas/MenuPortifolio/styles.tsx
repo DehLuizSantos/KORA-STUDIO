@@ -43,6 +43,7 @@ export const NavMenuDesk = styled.nav`
       background-color: transparent;
       color: ${(props) => props.theme.colors.leaf};
       all: unset;
+      cursor: pointer;
     }
   }
 `

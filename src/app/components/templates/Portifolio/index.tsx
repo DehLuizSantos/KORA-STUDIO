@@ -105,6 +105,41 @@ export default function Portifolio() {
         },
       ],
     },
+    {
+      date: 'MARÇO 25',
+      type: 'COMERCIAL',
+      title: 'DESIRE MERCH',
+      images: [
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-2.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-3.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-4.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-5.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-6.jpg',
+        },
+        {
+          alt: 'exemplo',
+          src: '/images/andre-photo-ex-7.jpg',
+        },
+      ],
+    },
   ]
 
   return (
