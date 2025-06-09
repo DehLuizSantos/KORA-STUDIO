@@ -7,17 +7,20 @@ export const CarouselContainer = styled.div`
   overflow: hidden;
 `
 
-export const CarouselInner = styled.div`
-  display: flex;
-  justify-content: center;
-`
-
 export const NavigationWrapper = styled.div`
   position: relative;
   margin: 15px 0;
 
   .keen-slider {
     height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      cursor: pointer;
+    }
   }
 `
 

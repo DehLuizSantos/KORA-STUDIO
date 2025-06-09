@@ -1,38 +1,22 @@
+import Divider from '../../atomos/Divider'
 import CarouselWithZoom from '../../moleculas/Carrousel'
 import { PortifolioCardContainer } from './styles'
 type PortifolioCardProps = {
-  type: 'COMERCIAL' | 'FASHION' | 'NATUREZA' | 'INTERIOR' | 'PESSOAL'
+  type: 'COMERCIAL' | 'FASHION' | 'NATUREZA' | 'INTERIOR' | 'PESSOAL' | string
   date: string
   title: string
+  images: {
+    alt: string
+    src: string
+  }[]
 }
 
 export default function PortifolioCard({
   type,
   date,
   title,
+  images,
 }: PortifolioCardProps) {
-  const images = [
-    {
-      alt: 'exemplo',
-      src: '/images/background-first-page-desk.jpg',
-    },
-    {
-      alt: 'exemplo',
-      src: '/images/background-first-page-desk.jpg',
-    },
-    {
-      alt: 'exemplo',
-      src: '/images/background-first-page-desk.jpg',
-    },
-    {
-      alt: 'exemplo',
-      src: '/images/background-first-page-desk.jpg',
-    },
-    {
-      alt: 'exemplo',
-      src: '/images/background-first-page-desk.jpg',
-    },
-  ]
   return (
     <PortifolioCardContainer>
       <div className='header'>
@@ -41,6 +25,7 @@ export default function PortifolioCard({
       </div>
       <h3>{title}</h3>
       <CarouselWithZoom images={images} />
+      <Divider />
     </PortifolioCardContainer>
   )
 }

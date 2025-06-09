@@ -1,17 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
-import {
-  CarouselContainer,
-  CarouselInner,
-  NavigationWrapper,
-  DotsWrapper,
-} from './styles'
+import React, { useEffect, useState } from 'react'
+import { CarouselContainer, NavigationWrapper, DotsWrapper } from './styles'
 import { useKeenSlider } from 'keen-slider/react'
-import 'keen-slider/keen-slider.min.css'
 import Slide from './Slide'
 import Arrow from './Arrow'
 import Image from 'next/image'
+import ZoomModal from '../../atomos/ZoomModal'
 
 type CarouselProps = {
   images: {
@@ -23,11 +18,30 @@ type CarouselProps = {
 export default function Carousel({ images }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const [zoomImage, setZoomImage] = useState<{
+    src: string
+    alt: string
+  } | null>(null)
+
+  useEffect(() => {
+    document.body.style.overflow = zoomImage ? 'hidden' : 'auto'
+  }, [zoomImage])
 
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
+    mode: 'free',
+
     slides: {
       perView: 3,
+      spacing: 15,
+    },
+    breakpoints: {
+      '(min-width: 400px)': {
+        slides: { perView: 4, spacing: 2 },
+      },
+      '(min-width: 800px)': {
+        slides: { perView: 10, spacing: 10 },
+      },
     },
 
     initial: 0,
@@ -42,7 +56,7 @@ export default function Carousel({ images }: CarouselProps) {
 
   return (
     <CarouselContainer>
-      <CarouselInner>
+      <>
         <NavigationWrapper>
           <div ref={sliderRef} className='keen-slider'>
             {images.map((group, index) => (
@@ -50,9 +64,9 @@ export default function Carousel({ images }: CarouselProps) {
                 <Image
                   src={group.src}
                   alt={group.alt}
-                  // fill
-                  width={120}
-                  height={140}
+                  onClick={() => setZoomImage(group)}
+                  width={95}
+                  height={132}
                 />
               </Slide>
             ))}
@@ -81,7 +95,7 @@ export default function Carousel({ images }: CarouselProps) {
             </>
           )}
         </NavigationWrapper>
-      </CarouselInner>
+      </>
 
       {loaded && instanceRef.current && (
         <DotsWrapper>
@@ -89,13 +103,20 @@ export default function Carousel({ images }: CarouselProps) {
             ...Array(instanceRef.current.track.details.slides.length).keys(),
           ].map((idx) => (
             <button
-              title='arrow'
+              title='dots'
               key={idx}
               className={`dot${currentSlide === idx ? ' active' : ''}`}
               onClick={() => instanceRef.current?.moveToIdx(idx)}
             />
           ))}
         </DotsWrapper>
+      )}
+      {zoomImage && (
+        <ZoomModal
+          src={zoomImage.src}
+          alt={zoomImage.alt}
+          onClose={() => setZoomImage(null)}
+        />
       )}
     </CarouselContainer>
   )

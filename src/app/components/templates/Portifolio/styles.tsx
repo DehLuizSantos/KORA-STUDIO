@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 
 export const PortifolioWrapper = styled.section`
-  height: 100vh;
   text-align: center;
   display: flex;
   align-items: center;

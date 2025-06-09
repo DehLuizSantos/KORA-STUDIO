@@ -1,7 +1,8 @@
 import styled from '@emotion/styled'
 
 export const PortifolioCardContainer = styled.div`
-  margin-top: 30px;
+  margin: 30px 0;
+  padding: 30px;
 
   .header {
     display: flex;
