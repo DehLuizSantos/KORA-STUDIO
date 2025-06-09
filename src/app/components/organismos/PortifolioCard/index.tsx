@@ -19,11 +19,13 @@ export default function PortifolioCard({
 }: PortifolioCardProps) {
   return (
     <PortifolioCardContainer>
-      <div className='header'>
-        <p>{type}</p>
-        <p>{date}</p>
+      <div className='title'>
+        <div className='header'>
+          <p>{type}</p>
+          <p>{date}</p>
+        </div>
+        <h3>{title}</h3>
       </div>
-      <h3>{title}</h3>
       <CarouselWithZoom images={images} />
       <Divider />
     </PortifolioCardContainer>
