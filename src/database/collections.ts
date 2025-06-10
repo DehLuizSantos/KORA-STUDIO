@@ -6,7 +6,7 @@ export const portifolioColections = [
     images: [
       {
         alt: 'exemplo',
-        src: '/images/andre-photo-ex.jpg',
+        src: '/images/moda/moda-1.jpg',
       },
       {
         alt: 'exemplo',
