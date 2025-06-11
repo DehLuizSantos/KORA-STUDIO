@@ -55,15 +55,15 @@ export default function OrcamentoFotos() {
 
         <div className='orcamento'>
           <Pricing
-            title='ESTIMATIVA DE PREÇO'
-            firstPrice={{ name: 'FINAIS DE SEMANA', price: 'R$ 89 h' }}
-            secoundPrice={{ name: 'DIAS DE SEMANA', price: 'R$ 69 h' }}
+            title='ESTIMATIVA DE PREÇO NO STUDIO'
+            firstPrice={{ name: 'FOTO AVULSA', price: 'R$ 15' }}
+            secoundPrice={{ name: '+  DE 15 (PACOTE)', price: 'R$ 180' }}
           />
           <Divider />
           <Pricing
             title='ESTIMATIVA DE PREÇO'
-            firstPrice={{ name: 'FINAIS DE SEMANA', price: 'R$ 89 h' }}
-            secoundPrice={{ name: 'DIAS DE SEMANA', price: 'R$ 69 h' }}
+            firstPrice={{ name: '15 FOTOS', price: 'R$ 220' }}
+            secoundPrice={{ name: '50 fotos', price: 'R$ 500' }}
           />
 
           <FormOrcamento />
