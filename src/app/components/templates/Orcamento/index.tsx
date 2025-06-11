@@ -1,9 +1,12 @@
+import OrcamentoFotos from '../../organismos/OrcamentoFotos'
+import OrcamentoStudio from '../../organismos/OrcamentoStudio'
 import { OrcamentoWrapper } from './styles'
 
 export default function Orcamento() {
   return (
     <OrcamentoWrapper id='orcamento'>
-      <h2>ORÇAMENTO</h2>
+      <OrcamentoStudio />
+      <OrcamentoFotos />
     </OrcamentoWrapper>
   )
 }

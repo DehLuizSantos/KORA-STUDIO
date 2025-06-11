@@ -4,7 +4,29 @@ import styled from '@emotion/styled'
 
 export const CarouselContainer = styled.div`
   width: 100%;
+
+  margin: 0 auto;
+
   overflow: hidden;
+
+  @media (min-width: 800px) {
+    max-width: 48vw;
+  }
+
+  .grid-thumb {
+    position: relative;
+    margin: 30px 0;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 675px;
+    height: 188px;
+    border: 2px solid ${(props) => props.theme.colors.dark};
+    box-shadow: 5px 3px ${(props) => props.theme.colors.primary};
+
+    img {
+      object-fit: cover;
+    }
+  }
 `
 
 export const NavigationWrapper = styled.div`

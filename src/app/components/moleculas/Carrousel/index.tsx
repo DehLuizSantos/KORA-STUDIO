@@ -9,15 +9,17 @@ import Image from 'next/image'
 import ZoomModal from '../../atomos/ZoomModal'
 
 type CarouselProps = {
+  hasThumbNails?: boolean
   images: {
     alt: string
     src: string
   }[]
 }
 
-export default function Carousel({ images }: CarouselProps) {
+export default function Carousel({ images, hasThumbNails }: CarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState(false)
+  const [thumbNailPhoto, setThumbNailPhoto] = useState(images[0])
   const [zoomImage, setZoomImage] = useState<{
     src: string
     alt: string
@@ -57,6 +59,11 @@ export default function Carousel({ images }: CarouselProps) {
   return (
     <CarouselContainer>
       <>
+        {hasThumbNails && (
+          <div className='grid-thumb'>
+            <Image src={thumbNailPhoto.src} alt={thumbNailPhoto.alt} fill />
+          </div>
+        )}
         <NavigationWrapper>
           <div ref={sliderRef} className='keen-slider'>
             {images.map((group, index) => (
@@ -64,7 +71,11 @@ export default function Carousel({ images }: CarouselProps) {
                 <Image
                   src={group.src}
                   alt={group.alt}
-                  onClick={() => setZoomImage(group)}
+                  onClick={() =>
+                    hasThumbNails
+                      ? setThumbNailPhoto(group)
+                      : setZoomImage(group)
+                  }
                   width={95}
                   height={132}
                 />

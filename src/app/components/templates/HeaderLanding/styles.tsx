@@ -33,10 +33,6 @@ export const DrawerMobile = styled.div`
     margin: 5px;
     margin-left: 90vw;
   }
-
-  img {
-    margin-top: 100px;
-  }
 `
 
 export const NavMenu = styled.nav`
