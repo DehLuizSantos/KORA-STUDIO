@@ -1,11 +1,32 @@
 import styled from '@emotion/styled'
 
 export const OrcamentoWrapper = styled.section`
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 62px;
+  margin-top: 60px;
+  padding: 60px 30px;
+  background-color: ${(props) => props.theme.colors.white};
+
+  .carrousel-wrapper {
+    @media (min-width: 800px) {
+      max-width: 48vw;
+    }
+  }
+
+  .orcamento {
+    @media (min-width: 800px) {
+      max-width: 48vw;
+    }
+  }
 `
-export const DescriptionTitle = styled.div``
+export const DescriptionTitle = styled.div`
+  text-align: left;
+  h2 {
+    font-weight: bold;
+    font-size: ${(props) => props.theme.fonts.xxlarge};
+    margin: 15px 0;
+    color: ${(props) => props.theme.colors.dark};
+  }
+
+  p {
+    color: ${(props) => props.theme.colors.dark};
+  }
+`

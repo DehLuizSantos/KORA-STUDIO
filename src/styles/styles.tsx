@@ -33,6 +33,7 @@ export const GlobalStyles = () => (
         margin: 0;
         padding: 0;
         font-family: 'Baumans', sans-serif;
+        color: #0e0f0e;
       }
 
       p,
@@ -40,6 +41,7 @@ export const GlobalStyles = () => (
         margin: 0;
         padding: 0;
         font-family: 'Blinker', sans-serif;
+        color: #1e241f;
       }
 
       button {

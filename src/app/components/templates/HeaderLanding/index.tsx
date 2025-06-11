@@ -47,15 +47,26 @@ export default function HeaderLandingPage() {
           <Drawer.Body>
             <DrawerMobile>
               <Drawer.CloseButton className='close' />
-              <Image
-                src='Logo.svg'
-                alt='Kora studios'
-                width={235}
-                height={116}
-              />
+              <Link
+                onClick={() => setMobileOpened(false)}
+                href={`/`}
+                className=''
+              >
+                <Image
+                  src='Logo.svg'
+                  alt='Kora studios'
+                  width={235}
+                  height={116}
+                />
+              </Link>
               <NavMenu>
                 {menuItens.map((link) => (
-                  <Link key={link.name} href={`${link.link}`} className=''>
+                  <Link
+                    onClick={() => setMobileOpened(false)}
+                    key={link.name}
+                    href={`${link.link}`}
+                    className=''
+                  >
                     {link.name}
                   </Link>
                 ))}

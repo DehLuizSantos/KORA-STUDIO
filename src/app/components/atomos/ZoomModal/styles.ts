@@ -6,6 +6,7 @@ export const Overlay = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -18,27 +19,28 @@ export const Overlay = styled.div`
 export const CloseButton = styled.button`
   color: ${(props) => props.theme.colors.primary};
   position: absolute;
-  top: 50px;
-  right: 10px;
+  top: 30px;
+  right: 30px;
   font-size: 1.5rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: transparent;
   border: none;
   border-radius: 4px;
   padding: 4px 8px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 10;
   font-weight: bold;
 `
 
 export const ZoomedImage = styled(Image)`
-  max-width: 90%;
-  max-height: 90%;
   object-fit: contain;
   border-radius: 8px;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
+  max-width: 1000px;
+  max-height: 90%;
 `
 export const ImageContainer = styled.div`
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  padding: 30px;
 `
