@@ -1,11 +1,10 @@
 import FormOrcamento from '../../moleculas/FormOrcamento'
 import { DescriptionTitle } from '../../templates/Orcamento/styles'
-import { OrcamentoStudioWrapper } from './styles'
+import { OrcamentoFotosWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
 import Divider from '../../atomos/Divider'
-import ListaNaoOrdenada from '../../moleculas/ListaNaoOrdenada'
 import Pricing from '../../moleculas/Pricing'
-const studioImages = [
+const FotosImages = [
   {
     alt: 'exemplo',
     src: '/images/andre-photo-ex-2.jpg',
@@ -36,34 +35,22 @@ const studioImages = [
   },
 ]
 
-export default function OrcamentoStudio() {
+export default function OrcamentoFotos() {
   return (
-    <OrcamentoStudioWrapper>
+    <OrcamentoFotosWrapper>
       <Divider />
 
       <DescriptionTitle>
-        <h2>LOCAÇÃO DO STUDIO</h2>
-        <p>
-          STUDIO COMPLETO COM CAMARA, LENTE, KIT DE ILUMINÇÃO FOTOGRAFICO
-          COMPLETO
-        </p>
+        <h2>FOTOS PROFISSIONAIS</h2>
+        <p>Capturando momentos únicos com técnica e sensibilidade artística</p>
       </DescriptionTitle>
       <Divider />
-      <div className='container-studio'>
-        <div className='carrousel-wrapper'>
-          <CarouselWithZoom hasThumbNails images={studioImages} />
-          <Divider />
 
-          <ListaNaoOrdenada
-            items={[
-              'Camera Canon T6',
-              'Lente  50mm, 1.8',
-              'Fundo infinito',
-              'Soft Box',
-              'Guarda chuvas com tripe',
-            ]}
-            title='EQUIPAMENTOS INCLUSOS NA LOCAÇÃO'
-          />
+      <div className='container-fotos'>
+        <div className='carrousel-wrapper'>
+          <CarouselWithZoom hasThumbNails images={FotosImages} />
+
+          <Divider />
         </div>
 
         <div className='orcamento'>
@@ -73,10 +60,16 @@ export default function OrcamentoStudio() {
             secoundPrice={{ name: 'DIAS DE SEMANA', price: 'R$ 69 h' }}
           />
           <Divider />
+          <Pricing
+            title='ESTIMATIVA DE PREÇO'
+            firstPrice={{ name: 'FINAIS DE SEMANA', price: 'R$ 89 h' }}
+            secoundPrice={{ name: 'DIAS DE SEMANA', price: 'R$ 69 h' }}
+          />
 
           <FormOrcamento />
         </div>
       </div>
-    </OrcamentoStudioWrapper>
+      <Divider />
+    </OrcamentoFotosWrapper>
   )
 }

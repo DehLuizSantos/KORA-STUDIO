@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 export const PricingWrapper = styled.div`
-  max-width: 300px;
+  max-width: 400px;
   margin: 30px 0;
 `
 export const PricingContainer = styled.div`

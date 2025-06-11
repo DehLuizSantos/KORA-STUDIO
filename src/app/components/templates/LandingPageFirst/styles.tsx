@@ -38,5 +38,6 @@ export const DescriptionTitle = styled.div`
 
   p {
     font-size: ${(props) => props.theme.fonts.large};
+    color: ${(props) => props.theme.colors.grey['300']};
   }
 `

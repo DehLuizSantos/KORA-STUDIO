@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
 
-export const OrcamentoStudioWrapper = styled.div`
+export const OrcamentoFotosWrapper = styled.div`
   @media (min-width: 800px) {
-    .container-studio {
+    .container-fotos {
       display: flex;
       justify-content: space-between;
       align-items: start;

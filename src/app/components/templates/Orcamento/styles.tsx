@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 export const OrcamentoWrapper = styled.section`
   margin-top: 60px;
   padding: 60px 30px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: #fff;
 
   .carrousel-wrapper {
     @media (min-width: 800px) {
