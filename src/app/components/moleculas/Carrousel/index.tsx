@@ -76,8 +76,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
                       ? setThumbNailPhoto(group)
                       : setZoomImage(group)
                   }
-                  width={95}
-                  height={132}
+                  fill
                 />
               </Slide>
             ))}

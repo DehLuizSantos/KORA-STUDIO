@@ -12,11 +12,15 @@ export default function Portifolio() {
   return (
     <PortifolioWrapper id='portifolio'>
       <WrapperWhite>
-        <MenuPortifolio
-          setSelected={setSelected}
-          menuSelected={selected}
-          data={menuOptions.map((menu) => `${menu.title} (${menu.quantidade})`)}
-        />
+        <div className='menu'>
+          <MenuPortifolio
+            setSelected={setSelected}
+            menuSelected={selected}
+            data={menuOptions.map(
+              (menu) => `${menu.title} (${menu.quantidade})`
+            )}
+          />
+        </div>
         {portifolioColections.map((colection, i) => (
           <PortifolioCard
             key={i}

@@ -6,8 +6,8 @@ import Image from 'next/image'
 export default function FormOrcamento() {
   return (
     <FormOrcamentoWrapper>
-      <FocusTrap>
-        <TextInput label='nome' data-autofocus />
+      <FocusTrap active>
+        <TextInput label='nome' autoFocus />
         <div className='flex'>
           <TextInput label='telefone' />
           <TextInput label='email' />

@@ -2,10 +2,7 @@ import styled from '@emotion/styled'
 
 export const ContatoWrapper = styled.section`
   height: 100vh;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: ${(props) => props.theme.colors.dark};
   margin-top: 62px;
 `
 export const DescriptionTitle = styled.div``

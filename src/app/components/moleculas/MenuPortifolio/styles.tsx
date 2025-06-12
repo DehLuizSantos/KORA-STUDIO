@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 
 export const MenuPortifolioWrapper = styled.div`
-  margin: 15px 30px;
-
+  .mantine-Select-dropdown {
+    background-color: red;
+  }
   .select {
     input {
       background-color: transparent;

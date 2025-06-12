@@ -35,9 +35,9 @@ export const ZoomedImage = styled(Image)`
   object-fit: contain;
   border-radius: 8px;
   pointer-events: none;
-  width: 100%;
-  height: 100%;
-  max-width: 1000px;
+
+  max-width: 700px;
+  min-width: 300px;
   max-height: 90%;
 `
 export const ImageContainer = styled.div`
