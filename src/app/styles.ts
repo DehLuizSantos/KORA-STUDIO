@@ -5,6 +5,8 @@ export const ContainerLandingPage = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
+  max-width: 1800px;
+  margin: 0 auto;
 `
 
 export const Title = styled.h1`

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const HeaderLanding = styled.div`
+export const HeaderLanding = styled.header`
   border: 2px solid ${(props) => props.theme.colors.primary};
   display: flex;
   align-items: center;
@@ -12,6 +12,7 @@ export const HeaderLanding = styled.div`
   width: 100%;
   z-index: 3;
   max-height: 60px;
+  max-width: 1800px;
 
   .hidden-mobile {
     display: none;

@@ -19,7 +19,7 @@ export const CarouselContainer = styled.div`
     border-radius: 5px;
     width: 100%;
     max-width: 675px;
-    height: 188px;
+    height: 220px;
     border: 2px solid ${(props) => props.theme.colors.dark};
     box-shadow: 5px 3px ${(props) => props.theme.colors.primary};
 
@@ -60,7 +60,7 @@ export const DotsWrapper = styled.div`
     cursor: pointer;
 
     &.active {
-      background: ${(props) => props.theme.colors.white};
+      background: ${(props) => props.theme.colors.grey['300']};
     }
   }
 `
