@@ -1,12 +1,12 @@
 export const portifolioColections = [
   {
-    date: 'MARÇO 25',
-    type: 'COMERCIAL',
+    date: 'MARÇO 20',
+    type: 'ARTE',
     title: 'DESIRE MERCH',
     images: [
       {
         alt: 'exemplo',
-        src: '/images/moda/moda-1.jpg',
+        src: '/images/colections/Arte/01.jpg',
       },
       {
         alt: 'exemplo',

@@ -1,4 +1,10 @@
-import { FocusTrap, NumberInput, Textarea, TextInput } from '@mantine/core'
+import {
+  Button,
+  FocusTrap,
+  NumberInput,
+  Textarea,
+  TextInput,
+} from '@mantine/core'
 import { DateInput } from '@mantine/dates'
 import { FormOrcamentoWrapper } from './styles'
 import Image from 'next/image'
@@ -6,8 +12,8 @@ import Image from 'next/image'
 export default function FormOrcamento() {
   return (
     <FormOrcamentoWrapper>
-      <FocusTrap>
-        <TextInput label='nome' data-autofocus />
+      <FocusTrap active>
+        <TextInput label='nome' autoFocus />
         <div className='flex'>
           <TextInput label='telefone' />
           <TextInput label='email' />
@@ -33,6 +39,10 @@ export default function FormOrcamento() {
           />
         </div>
         <Textarea label='informações adicionais' placeholder='OBSERVAÇÕES' />
+
+        <Button fullWidth className='button-orcament'>
+          SOLICITAR ORÇAMENTO
+        </Button>
       </FocusTrap>
     </FormOrcamentoWrapper>
   )

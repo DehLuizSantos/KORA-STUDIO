@@ -35,7 +35,7 @@ export default function RootLayout({
       className={(baumans.variable, blinker.variable)}
     >
       <head>
-        <ColorSchemeScript defaultColorScheme='dark' />
+        <ColorSchemeScript defaultColorScheme='light' />
       </head>
       <body className={(baumans.variable, blinker.variable)}>
         <Providers>{children}</Providers>

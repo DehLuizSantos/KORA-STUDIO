@@ -42,7 +42,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
         slides: { perView: 4, spacing: 2 },
       },
       '(min-width: 800px)': {
-        slides: { perView: 10, spacing: 10 },
+        slides: { perView: 3, spacing: 5 },
       },
     },
 
@@ -61,7 +61,12 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
       <>
         {hasThumbNails && (
           <div className='grid-thumb'>
-            <Image src={thumbNailPhoto.src} alt={thumbNailPhoto.alt} fill />
+            <Image
+              src={thumbNailPhoto.src}
+              alt={thumbNailPhoto.alt}
+              fill
+              sizes='(max-width: 768px) 100vw, 33vw'
+            />
           </div>
         )}
         <NavigationWrapper>
@@ -71,13 +76,13 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
                 <Image
                   src={group.src}
                   alt={group.alt}
+                  sizes='(max-width: 768px) 100vw, 33vw'
                   onClick={() =>
                     hasThumbNails
                       ? setThumbNailPhoto(group)
                       : setZoomImage(group)
                   }
-                  width={95}
-                  height={132}
+                  fill
                 />
               </Slide>
             ))}

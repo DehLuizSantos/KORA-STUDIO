@@ -4,6 +4,9 @@ import { OrcamentoFotosWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
 import Divider from '../../atomos/Divider'
 import Pricing from '../../moleculas/Pricing'
+import MenuPortifolio from '../../moleculas/MenuPortifolio'
+import { menuOptions } from '@/database/collections'
+import { useState } from 'react'
 const FotosImages = [
   {
     alt: 'exemplo',
@@ -36,6 +39,7 @@ const FotosImages = [
 ]
 
 export default function OrcamentoFotos() {
+  const [selected, setSelected] = useState('TODOS')
   return (
     <OrcamentoFotosWrapper>
       <Divider />
@@ -48,6 +52,11 @@ export default function OrcamentoFotos() {
 
       <div className='container-fotos'>
         <div className='carrousel-wrapper'>
+          <MenuPortifolio
+            data={menuOptions.map((menu) => `${menu.title}`)}
+            menuSelected={selected}
+            setSelected={setSelected}
+          />
           <CarouselWithZoom hasThumbNails images={FotosImages} />
 
           <Divider />

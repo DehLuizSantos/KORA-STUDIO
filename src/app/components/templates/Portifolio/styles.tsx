@@ -8,5 +8,9 @@ export const PortifolioWrapper = styled.section`
   margin-top: 62px;
   padding: 60px 30px;
   background-color: ${(props) => props.theme.colors.leaf};
+
+  .menu {
+    padding: 30px;
+  }
 `
 export const DescriptionTitle = styled.div``

@@ -1,8 +1,9 @@
 import styled from '@emotion/styled'
 
 export const MenuPortifolioWrapper = styled.div`
-  margin: 15px 30px;
-
+  .mantine-Select-dropdown {
+    background-color: red;
+  }
   .select {
     input {
       background-color: transparent;
@@ -30,6 +31,7 @@ export const NavMenuDesk = styled.nav`
 
   .listed {
     color: ${(props) => props.theme.colors.dark};
+    border-bottom: 1px solid ${(props) => props.theme.colors.dark};
   }
 
   ul {
@@ -41,7 +43,7 @@ export const NavMenuDesk = styled.nav`
 
     button {
       background-color: transparent;
-      color: ${(props) => props.theme.colors.leaf};
+      color: ${(props) => props.theme.colors.grey['500']};
       all: unset;
       cursor: pointer;
     }
