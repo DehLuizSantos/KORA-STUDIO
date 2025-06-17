@@ -42,7 +42,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
         slides: { perView: 4, spacing: 2 },
       },
       '(min-width: 800px)': {
-        slides: { perView: 3, spacing: 5 },
+        slides: { perView: 5, spacing: 5 },
       },
     },
 
@@ -77,6 +77,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
                   src={group.src}
                   alt={group.alt}
                   sizes='(max-width: 768px) 100vw, 33vw'
+                  priority
                   onClick={() =>
                     hasThumbNails
                       ? setThumbNailPhoto(group)

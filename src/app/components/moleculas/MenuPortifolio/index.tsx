@@ -17,7 +17,7 @@ export default function MenuPortifolio({
     <MenuPortifolioWrapper>
       <Select
         data={data}
-        placeholder='TODOS (25)'
+        placeholder='TODOS'
         className='select'
         value={menuSelected}
         onChange={(e) => setSelected(e!)}

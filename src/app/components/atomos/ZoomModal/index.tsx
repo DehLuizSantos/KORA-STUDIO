@@ -13,7 +13,7 @@ export default function ZoomModal({ src, alt, onClose }: ZoomModalProps) {
     <Overlay onClick={onClose}>
       <ImageContainer>
         <CloseButton onClick={onClose}>&times;</CloseButton>
-        <ZoomedImage src={src} alt={alt} width={800} height={600} />
+        <ZoomedImage src={src} alt={alt} width={350} height={350} />
       </ImageContainer>
     </Overlay>
   )

@@ -32,13 +32,15 @@ export const CloseButton = styled.button`
 `
 
 export const ZoomedImage = styled(Image)`
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 8px;
   pointer-events: none;
+  height: auto;
 
-  max-width: 700px;
-  min-width: 300px;
-  max-height: 90%;
+  @media (min-width: 800px) {
+    min-width: 600px;
+    width: 100%;
+  }
 `
 export const ImageContainer = styled.div`
   position: relative;

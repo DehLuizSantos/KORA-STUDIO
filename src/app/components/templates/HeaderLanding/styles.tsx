@@ -47,5 +47,9 @@ export const NavMenu = styled.nav`
     cursor: pointer;
     margin: 60px 0;
     color: ${(props) => props.theme.colors.white};
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 `

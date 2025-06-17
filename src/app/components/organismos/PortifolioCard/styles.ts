@@ -15,7 +15,7 @@ export const PortifolioCardContainer = styled.div`
       align-items: center;
       justify-content: center;
       gap: 10px;
-      font-size: ${(props) => props.theme.fonts.xlarge};
+      font-size: ${(props) => props.theme.fonts.large};
       color: ${(props) => props.theme.colors.dark};
       font-weight: 700;
 
@@ -30,7 +30,7 @@ export const PortifolioCardContainer = styled.div`
   }
 
   h3 {
-    font-size: ${(props) => props.theme.fonts.xxxlarge};
+    font-size: ${(props) => props.theme.fonts.xlarge};
     color: ${(props) => props.theme.colors.dark};
     font-weight: 700;
     font-family: 'Baumans';
