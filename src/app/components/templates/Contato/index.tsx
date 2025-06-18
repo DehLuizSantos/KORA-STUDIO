@@ -11,14 +11,17 @@ import FormOrcamento from '../../moleculas/FormOrcamento'
 export default function Contato() {
   return (
     <ContatoWrapper id='contato'>
-      <div className='image'>
-        <Image
-          fill
-          src='/images/contato-whapper.jpg'
-          alt='contato'
-          sizes='(max-width: 768px) 100vw, 33vw'
-        />
-      </div>
+      {
+        <div className='image-contato'>
+          <Image
+            src='/images/colections/Natureza/02.jpg'
+            alt='contato'
+            quality={100}
+            fill
+            sizes='(max-width: 768px) 100vw, 33vw'
+          />
+        </div>
+      }
 
       <ContatoContainer>
         <ContatoTitle>
@@ -56,7 +59,6 @@ export default function Contato() {
           </ContatoInfo>
         </ContatoTitle>
       </ContatoContainer>
-      <span className='copy'>© 2026 KORA. Todos os direitos reservados. </span>
     </ContatoWrapper>
   )
 }

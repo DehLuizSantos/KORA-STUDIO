@@ -40,7 +40,7 @@ export default function OrcamentoFotos() {
 
         <div className='orcamento'>
           <Pricing
-            title='ESTIMATIVA DE PREÇO NO STUDIO'
+            title='ESTIMATIVA DE PREÇO NO ESTÚDIO'
             firstPrice={{ name: 'FOTO AVULSA', price: 'R$ 15' }}
             secoundPrice={{ name: '+  DE 15 (PACOTE)', price: 'R$ 180' }}
           />

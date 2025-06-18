@@ -13,10 +13,9 @@ export default function OrcamentoStudio() {
       <Divider />
 
       <DescriptionTitle>
-        <h2>LOCAÇÃO DO STUDIO</h2>
+        <h2>LOCAÇÃO DO ESTÚDIO</h2>
         <p>
-          STUDIO COMPLETO COM CAMARA, LENTE, KIT DE ILUMINÇÃO FOTOGRAFICO
-          COMPLETO
+          ESTÚDIO COMPLETO COM CÂMERA, LENTE E KIT DE ILUMINAÇÃO FOTOGRÁFICA
         </p>
       </DescriptionTitle>
       <Divider />
@@ -27,11 +26,11 @@ export default function OrcamentoStudio() {
 
           <ListaNaoOrdenada
             items={[
-              'Camera Canon T6',
-              'Lente  50mm, 1.8',
+              'Câmera Canon T6',
+              'Lente 50mm f/1.8',
               'Fundo infinito',
-              'Soft Box',
-              'Guarda chuvas com tripe',
+              'Softbox',
+              'Guarda-chuvas com tripé',
             ]}
             title='EQUIPAMENTOS INCLUSOS NA LOCAÇÃO'
           />

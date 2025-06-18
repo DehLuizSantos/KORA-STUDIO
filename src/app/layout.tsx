@@ -6,8 +6,11 @@ import { ColorSchemeScript, mantineHtmlProps } from '@mantine/core'
 import { Providers } from './providers'
 
 export const metadata: Metadata = {
-  title: 'KORA',
-  description: 'Studio fotográfico',
+  title: 'ORA',
+  description: 'Estúdio fotográfico Itajaí SC',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 const baumans = Baumans({

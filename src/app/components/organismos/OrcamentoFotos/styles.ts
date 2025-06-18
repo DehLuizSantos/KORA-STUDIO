@@ -8,6 +8,10 @@ export const OrcamentoFotosWrapper = styled.div`
       align-items: start;
       margin-top: 30px;
       gap: 30px;
+
+      .carrousel-wrapper {
+        min-width: 450px;
+      }
     }
   }
 `

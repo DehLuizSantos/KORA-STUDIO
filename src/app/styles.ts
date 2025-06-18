@@ -7,6 +7,11 @@ export const ContainerLandingPage = styled.div`
   height: 100vh;
   max-width: 1800px;
   margin: 0 auto;
+
+  span {
+    color: ${(props) => props.theme.colors.white};
+    font-size: ${(props) => props.theme.fonts.large};
+  }
 `
 
 export const Title = styled.h1`

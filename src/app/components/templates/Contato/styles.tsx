@@ -3,25 +3,22 @@ import styled from '@emotion/styled'
 export const ContatoWrapper = styled.section`
   background-color: #fff;
   margin-top: 62px;
-  height: 100%;
+  height: auto;
   margin-bottom: 90px;
 
-  .image {
+  .image-contato {
     position: relative;
-    width: 100%;
-    height: 400px;
-
-    @media (min-width: 800px) {
-      height: 70%;
-    }
+    left: 0;
+    right: 0;
+    height: 230px;
 
     img {
-      object-fit: contain;
+      object-fit: cover;
     }
-  }
 
-  .copy {
-    color: ${(props) => props.theme.colors.white};
+    @media (min-width: 800px) {
+      display: none;
+    }
   }
 `
 export const ContatoContainer = styled.div`

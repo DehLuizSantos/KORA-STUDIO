@@ -15,6 +15,7 @@ export default function LandingPage() {
       <Portifolio />
       <Orcamento />
       <Contato />
+      <span className='copy'>© 2026 KORA. Todos os direitos reservados. </span>
     </ContainerLandingPage>
   )
 }
