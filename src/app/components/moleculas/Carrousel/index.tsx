@@ -13,6 +13,7 @@ type CarouselProps = {
   images: {
     alt: string
     src: string
+    type?: string
   }[]
 }
 
@@ -62,8 +63,10 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
         {hasThumbNails && (
           <div className='grid-thumb'>
             <Image
-              src={thumbNailPhoto.src}
-              alt={thumbNailPhoto.alt}
+              src={thumbNailPhoto?.src}
+              quality={100}
+              // placeholder='blur'
+              alt={thumbNailPhoto?.alt}
               fill
               sizes='(max-width: 768px) 100vw, 33vw'
             />
@@ -77,7 +80,8 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
                   src={group.src}
                   alt={group.alt}
                   sizes='(max-width: 768px) 100vw, 33vw'
-                  priority
+                  quality={100}
+                  // placeholder='blur'
                   onClick={() =>
                     hasThumbNails
                       ? setThumbNailPhoto(group)

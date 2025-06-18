@@ -12,6 +12,7 @@ const StyledArrow = styled.svg<{ left?: boolean; disabled: boolean }>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transform: translateY(-50%);
   z-index: 2;
+  fill: #641323;
 `
 
 type ArrowProps = {

@@ -48,6 +48,17 @@ export const GlobalStyles = () => (
         font-family: inherit;
         cursor: pointer;
       }
+
+      [data-mantine-color-scheme='dark']
+        .m_92253aa5:active:not([data-combobox-selected]):not(
+          [data-combobox-disabled]
+        ) {
+        background-color: var(--mantine-color-white-1);
+      }
+
+      .mantine-Select-dropdown {
+        background-color: white;
+      }
     `}
   />
 )

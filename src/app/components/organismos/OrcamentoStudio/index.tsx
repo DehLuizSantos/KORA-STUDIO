@@ -5,36 +5,7 @@ import CarouselWithZoom from '../../moleculas/Carrousel'
 import Divider from '../../atomos/Divider'
 import ListaNaoOrdenada from '../../moleculas/ListaNaoOrdenada'
 import Pricing from '../../moleculas/Pricing'
-const studioImages = [
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-3.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-4.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-]
+import { studioImages } from '@/database/collections'
 
 export default function OrcamentoStudio() {
   return (

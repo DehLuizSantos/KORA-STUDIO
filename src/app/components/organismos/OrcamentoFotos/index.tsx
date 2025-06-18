@@ -5,41 +5,17 @@ import CarouselWithZoom from '../../moleculas/Carrousel'
 import Divider from '../../atomos/Divider'
 import Pricing from '../../moleculas/Pricing'
 import MenuPortifolio from '../../moleculas/MenuPortifolio'
-import { menuOptions } from '@/database/collections'
-import { useState } from 'react'
-const FotosImages = [
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-3.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-4.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-  {
-    alt: 'exemplo',
-    src: '/images/andre-photo-ex-2.jpg',
-  },
-]
+import { fotosImages, menuOptions } from '../../../../database/collections'
+import { useMemo, useState } from 'react'
 
 export default function OrcamentoFotos() {
   const [selected, setSelected] = useState('TODOS')
+
+  const filteredImages = useMemo(() => {
+    if (selected === 'TODOS') return fotosImages
+    return fotosImages.filter((image) => image.type === selected)
+  }, [selected])
+
   return (
     <OrcamentoFotosWrapper>
       <Divider />
@@ -57,7 +33,7 @@ export default function OrcamentoFotos() {
             menuSelected={selected}
             setSelected={setSelected}
           />
-          <CarouselWithZoom hasThumbNails images={FotosImages} />
+          <CarouselWithZoom hasThumbNails images={filteredImages} />
 
           <Divider />
         </div>

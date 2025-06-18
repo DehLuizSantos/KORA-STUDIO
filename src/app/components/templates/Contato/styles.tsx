@@ -32,7 +32,7 @@ export const ContatoContainer = styled.div`
     width: 100%;
     margin: 0 auto;
     max-width: fit-content;
-    padding-bottom: 15px;
+    padding: 60px 30px;
   }
   @media (min-width: 800px) {
     display: flex;

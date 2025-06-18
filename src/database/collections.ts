@@ -216,3 +216,36 @@ export const menuOptions = [
     ).length,
   },
 ]
+
+export const studioImages = [
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-1.jpg',
+  },
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-2.jpg',
+  },
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-3.jpg',
+  },
+]
+
+export const fotosImages = [
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-2.jpg',
+    type: 'COMERCIAL',
+  },
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-3.jpg',
+    type: 'PESSOAL',
+  },
+  {
+    alt: 'exemplo',
+    src: '/images/moda/moda-1.jpg',
+    type: 'ARTE',
+  },
+]
