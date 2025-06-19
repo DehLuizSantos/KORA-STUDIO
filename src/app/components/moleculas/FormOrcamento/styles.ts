@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const FormOrcamentoWrapper = styled.form`
+export const FormOrcamentoWrapper = styled.div`
   width: 100%;
   max-width: 400px;
   text-align: end;
