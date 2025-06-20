@@ -1,4 +1,4 @@
-import FormOrcamento, { FormValues } from '../../moleculas/FormOrcamento'
+import FormOrcamento from '../../moleculas/FormOrcamento'
 import { DescriptionTitle } from '../../templates/Orcamento/styles'
 import { OrcamentoStudioWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
@@ -6,8 +6,23 @@ import Divider from '../../atomos/Divider'
 import ListaNaoOrdenada from '../../moleculas/ListaNaoOrdenada'
 import Pricing from '../../moleculas/Pricing'
 import { studioImages } from '@/database/collections'
+import { useForm, zodResolver } from '@mantine/form'
+import { FormValues, schema } from '../../moleculas/FormOrcamento/schema'
 
 export default function OrcamentoStudio() {
+  const phone = '554799988920' // seu número com DDI + DDD
+  const form = useForm<FormValues>({
+    validate: zodResolver(schema),
+    initialValues: {
+      nome: '',
+      telefone: '',
+      email: '',
+      data: new Date(),
+      horas: 1,
+      observacoes: '',
+    },
+  })
+
   const handleSubmit = (values: FormValues) => {
     const msg =
       `*Novo Orçamento Recebido:*\n\n` +
@@ -17,11 +32,12 @@ export default function OrcamentoStudio() {
         values.horas
       }\n Observações: ${values.observacoes ?? '-'}`
 
-    const phone = '5511991857180' // seu número com DDI + DDD
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
 
     window.open(whatsappUrl, '_blank')
+    form.reset()
   }
+
   return (
     <OrcamentoStudioWrapper>
       <Divider />
@@ -58,7 +74,11 @@ export default function OrcamentoStudio() {
           />
           <Divider />
 
-          <FormOrcamento type='estudio' handleSubmit={handleSubmit} />
+          <FormOrcamento
+            form={form}
+            type='estudio'
+            handleSubmit={handleSubmit}
+          />
         </div>
       </div>
     </OrcamentoStudioWrapper>

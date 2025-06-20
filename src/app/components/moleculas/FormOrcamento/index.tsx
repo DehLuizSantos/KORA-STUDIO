@@ -8,45 +8,23 @@ import {
   TextInput,
 } from '@mantine/core'
 import { DateInput } from '@mantine/dates'
-import { useForm, zodResolver } from '@mantine/form'
-import { z } from 'zod'
+import { UseFormReturnType } from '@mantine/form'
 import { FormOrcamentoWrapper } from './styles'
 import Image from 'next/image'
 import { MaskedCelPhone } from '../../../../../utils/validates'
-
-// Validação com Zod
-const schema = z.object({
-  nome: z.string().min(2, 'Nome obrigatório'),
-  telefone: z.string().min(8, 'Telefone obrigatório'),
-  email: z.string().email('E-mail inválido'),
-  data: z.date({ required_error: 'Data obrigatória' }),
-  horas: z.number().min(1, 'Informe ao menos 1 hora'),
-  observacoes: z.string().optional(),
-})
-
-export type FormValues = z.infer<typeof schema>
+import { FormValues } from './schema'
 
 type FormOrcamentoProps = {
   handleSubmit: (values: FormValues) => void
   type: 'fotos' | 'estudio'
+  form: UseFormReturnType<FormValues>
 }
 
 export default function FormOrcamento({
   handleSubmit,
+  form,
   type,
 }: FormOrcamentoProps) {
-  const form = useForm<FormValues>({
-    validate: zodResolver(schema),
-    initialValues: {
-      nome: '',
-      telefone: '',
-      email: '',
-      data: new Date(),
-      horas: 1,
-      observacoes: '',
-    },
-  })
-
   return (
     <FormOrcamentoWrapper>
       <FocusTrap active>

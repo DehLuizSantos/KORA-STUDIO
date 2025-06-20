@@ -1,4 +1,4 @@
-import FormOrcamento, { FormValues } from '../../moleculas/FormOrcamento'
+import FormOrcamento from '../../moleculas/FormOrcamento'
 import { DescriptionTitle } from '../../templates/Orcamento/styles'
 import { OrcamentoFotosWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
@@ -7,14 +7,29 @@ import Pricing from '../../moleculas/Pricing'
 import MenuPortifolio from '../../moleculas/MenuPortifolio'
 import { fotosImages, menuOptions } from '../../../../database/collections'
 import { useMemo, useState } from 'react'
+import { useForm, zodResolver } from '@mantine/form'
+import { FormValues, schema } from '../../moleculas/FormOrcamento/schema'
 
 export default function OrcamentoFotos() {
   const [selected, setSelected] = useState('TODOS')
+  const phone = '554799988920' // seu número com DDI + DDD
 
   const filteredImages = useMemo(() => {
     if (selected === 'TODOS') return fotosImages
     return fotosImages.filter((image) => image.type === selected)
   }, [selected])
+
+  const form = useForm<FormValues>({
+    validate: zodResolver(schema),
+    initialValues: {
+      nome: '',
+      telefone: '',
+      email: '',
+      data: new Date(),
+      horas: 1,
+      observacoes: '',
+    },
+  })
 
   const handleSubmit = (values: FormValues) => {
     const msg =
@@ -25,10 +40,10 @@ export default function OrcamentoFotos() {
         values.horas
       }\n Observações: ${values.observacoes ?? '-'}`
 
-    const phone = '5511991857180' // seu número com DDI + DDD
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
 
     window.open(whatsappUrl, '_blank')
+    form.reset()
   }
 
   return (
@@ -66,7 +81,7 @@ export default function OrcamentoFotos() {
             secoundPrice={{ name: '50 fotos', price: 'R$ 500' }}
           />
 
-          <FormOrcamento type='fotos' handleSubmit={handleSubmit} />
+          <FormOrcamento form={form} type='fotos' handleSubmit={handleSubmit} />
         </div>
       </div>
       <Divider />
