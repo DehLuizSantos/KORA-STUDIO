@@ -12,6 +12,7 @@ import { useForm, zodResolver } from '@mantine/form'
 import { z } from 'zod'
 import { FormOrcamentoWrapper } from './styles'
 import Image from 'next/image'
+import { MaskedCelPhone } from '../../../../../utils/validates'
 
 // Validação com Zod
 const schema = z.object({
@@ -23,9 +24,17 @@ const schema = z.object({
   observacoes: z.string().optional(),
 })
 
-type FormValues = z.infer<typeof schema>
+export type FormValues = z.infer<typeof schema>
 
-export default function FormOrcamento() {
+type FormOrcamentoProps = {
+  handleSubmit: (values: FormValues) => void
+  type: 'fotos' | 'estudio'
+}
+
+export default function FormOrcamento({
+  handleSubmit,
+  type,
+}: FormOrcamentoProps) {
   const form = useForm<FormValues>({
     validate: zodResolver(schema),
     initialValues: {
@@ -38,29 +47,19 @@ export default function FormOrcamento() {
     },
   })
 
-  const handleSubmit = (values: FormValues) => {
-    const msg =
-      `*Novo Orçamento Recebido:*\n\n` +
-      `Nome: ${values.nome}\n Telefone: ${values.telefone}\n Email: ${
-        values.email
-      }\n Data: ${values.data.toLocaleDateString()}\n Horas: ${
-        values.horas
-      }\n Observações: ${values.observacoes ?? '-'}`
-
-    const phone = '5511991857180' // seu número com DDI + DDD
-    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
-
-    window.open(whatsappUrl, '_blank')
-    form.reset()
-  }
-
   return (
     <FormOrcamentoWrapper>
       <FocusTrap active>
-        <form onSubmit={form.onSubmit(handleSubmit)}>
+        <form>
           <TextInput label='nome' autoFocus {...form.getInputProps('nome')} />
           <div className='flex'>
-            <TextInput label='telefone' {...form.getInputProps('telefone')} />
+            <TextInput
+              label='telefone'
+              maxLength={15}
+              value={MaskedCelPhone(form.getInputProps('telefone').value)}
+              onChange={form.getInputProps('telefone').onChange}
+              error={form.getInputProps('telefone').error}
+            />
             <TextInput label='email' {...form.getInputProps('email')} />
           </div>
           <div className='flex'>
@@ -86,8 +85,10 @@ export default function FormOrcamento() {
             />
             <NumberInput
               allowNegative={false}
-              label='número de horas'
-              placeholder='número de horas'
+              label={type === 'estudio' ? 'número de horas' : 'número de fotos'}
+              placeholder={
+                type === 'estudio' ? 'número de horas' : 'número de fotos'
+              }
               {...form.getInputProps('horas')}
             />
           </div>
@@ -96,7 +97,11 @@ export default function FormOrcamento() {
             placeholder='OBSERVAÇÕES'
             {...form.getInputProps('observacoes')}
           />
-          <Button type='submit' fullWidth className='button-orcament'>
+          <Button
+            fullWidth
+            className='button-orcament'
+            onClick={() => handleSubmit(form.values)}
+          >
             SOLICITAR ORÇAMENTO
           </Button>
         </form>

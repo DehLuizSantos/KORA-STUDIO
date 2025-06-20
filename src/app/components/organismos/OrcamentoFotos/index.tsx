@@ -1,4 +1,4 @@
-import FormOrcamento from '../../moleculas/FormOrcamento'
+import FormOrcamento, { FormValues } from '../../moleculas/FormOrcamento'
 import { DescriptionTitle } from '../../templates/Orcamento/styles'
 import { OrcamentoFotosWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
@@ -15,6 +15,21 @@ export default function OrcamentoFotos() {
     if (selected === 'TODOS') return fotosImages
     return fotosImages.filter((image) => image.type === selected)
   }, [selected])
+
+  const handleSubmit = (values: FormValues) => {
+    const msg =
+      `*Novo Orçamento Recebido:*\n\n` +
+      `Nome: ${values.nome}\n Telefone: ${values.telefone}\n Email: ${
+        values.email
+      }\n Data: ${values.data.toLocaleDateString()}\n Horas: ${
+        values.horas
+      }\n Observações: ${values.observacoes ?? '-'}`
+
+    const phone = '5511991857180' // seu número com DDI + DDD
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+
+    window.open(whatsappUrl, '_blank')
+  }
 
   return (
     <OrcamentoFotosWrapper>
@@ -51,7 +66,7 @@ export default function OrcamentoFotos() {
             secoundPrice={{ name: '50 fotos', price: 'R$ 500' }}
           />
 
-          <FormOrcamento />
+          <FormOrcamento type='fotos' handleSubmit={handleSubmit} />
         </div>
       </div>
       <Divider />

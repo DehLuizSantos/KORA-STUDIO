@@ -1,4 +1,4 @@
-import FormOrcamento from '../../moleculas/FormOrcamento'
+import FormOrcamento, { FormValues } from '../../moleculas/FormOrcamento'
 import { DescriptionTitle } from '../../templates/Orcamento/styles'
 import { OrcamentoStudioWrapper } from './styles'
 import CarouselWithZoom from '../../moleculas/Carrousel'
@@ -8,6 +8,20 @@ import Pricing from '../../moleculas/Pricing'
 import { studioImages } from '@/database/collections'
 
 export default function OrcamentoStudio() {
+  const handleSubmit = (values: FormValues) => {
+    const msg =
+      `*Novo Orçamento Recebido:*\n\n` +
+      `Nome: ${values.nome}\n Telefone: ${values.telefone}\n Email: ${
+        values.email
+      }\n Data: ${values.data.toLocaleDateString()}\n Horas: ${
+        values.horas
+      }\n Observações: ${values.observacoes ?? '-'}`
+
+    const phone = '5511991857180' // seu número com DDI + DDD
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+
+    window.open(whatsappUrl, '_blank')
+  }
   return (
     <OrcamentoStudioWrapper>
       <Divider />
@@ -44,7 +58,7 @@ export default function OrcamentoStudio() {
           />
           <Divider />
 
-          <FormOrcamento />
+          <FormOrcamento type='estudio' handleSubmit={handleSubmit} />
         </div>
       </div>
     </OrcamentoStudioWrapper>
