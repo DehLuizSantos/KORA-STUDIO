@@ -1,6 +1,41 @@
 export const portifolioColections = [
   {
-    date: 'MARÇO 20',
+    date: 'OUTUBRO 2025',
+    type: 'MODELAGEM',
+    title: 'DIREÇÃO DE ARTE',
+    images: [
+      {
+        alt: 'exemplo',
+        src: '/images/colections/DirecaoArte/01.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/02.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/03.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/04.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/05.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/06.jpg',
+      },
+      {
+        alt: 'exemplo',
+        src: '/images/colections/Arte/07.jpg',
+      },
+    ],
+  },
+  {
+    date: 'MARÇO 2022',
     type: 'ARTE',
     title: 'GALERIA DE ARTE',
     images: [
@@ -31,38 +66,6 @@ export const portifolioColections = [
       {
         alt: 'exemplo',
         src: '/images/colections/Arte/07.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/08.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/09.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/10.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/11.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/12.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/13.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/14.jpg',
-      },
-      {
-        alt: 'exemplo',
-        src: '/images/colections/Arte/15.jpg',
       },
     ],
   },

@@ -13,7 +13,6 @@ type CarouselProps = {
   images: {
     alt: string
     src: string
-    type?: string
   }[]
 }
 
@@ -43,7 +42,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
         slides: { perView: 4, spacing: 2 },
       },
       '(min-width: 800px)': {
-        slides: { perView: 5, spacing: 5 },
+        slides: { perView: 10, spacing: 10 },
       },
     },
 
@@ -62,14 +61,7 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
       <>
         {hasThumbNails && (
           <div className='grid-thumb'>
-            <Image
-              src={thumbNailPhoto?.src}
-              quality={100}
-              // placeholder='blur'
-              alt={thumbNailPhoto?.alt}
-              fill
-              sizes='(max-width: 768px) 100vw, 33vw'
-            />
+            <Image src={thumbNailPhoto.src} alt={thumbNailPhoto.alt} fill />
           </div>
         )}
         <NavigationWrapper>
@@ -79,15 +71,13 @@ export default function Carousel({ images, hasThumbNails }: CarouselProps) {
                 <Image
                   src={group.src}
                   alt={group.alt}
-                  sizes='(max-width: 768px) 100vw, 33vw'
-                  quality={100}
-                  // placeholder='blur'
                   onClick={() =>
                     hasThumbNails
                       ? setThumbNailPhoto(group)
                       : setZoomImage(group)
                   }
-                  fill
+                  width={95}
+                  height={132}
                 />
               </Slide>
             ))}
