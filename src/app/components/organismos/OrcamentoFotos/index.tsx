@@ -7,14 +7,44 @@ import Pricing from '../../moleculas/Pricing'
 import MenuPortifolio from '../../moleculas/MenuPortifolio'
 import { fotosImages, menuOptions } from '../../../../database/collections'
 import { useMemo, useState } from 'react'
+import { useForm, zodResolver } from '@mantine/form'
+import { FormValues, schema } from '../../moleculas/FormOrcamento/schema'
 
 export default function OrcamentoFotos() {
   const [selected, setSelected] = useState('TODOS')
+  const phone = '554799988920' // seu número com DDI + DDD
 
   const filteredImages = useMemo(() => {
     if (selected === 'TODOS') return fotosImages
     return fotosImages.filter((image) => image.type === selected)
   }, [selected])
+
+  const form = useForm<FormValues>({
+    validate: zodResolver(schema),
+    initialValues: {
+      nome: '',
+      telefone: '',
+      email: '',
+      data: new Date(),
+      horas: 1,
+      observacoes: '',
+    },
+  })
+
+  const handleSubmit = (values: FormValues) => {
+    const msg =
+      `*Novo Orçamento Recebido:*\n\n` +
+      `Nome: ${values.nome}\n Telefone: ${values.telefone}\n Email: ${
+        values.email
+      }\n Data: ${values.data.toLocaleDateString()}\n Horas: ${
+        values.horas
+      }\n Observações: ${values.observacoes ?? '-'}`
+
+    const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
+
+    window.open(whatsappUrl, '_blank')
+    form.reset()
+  }
 
   return (
     <OrcamentoFotosWrapper>
@@ -51,7 +81,7 @@ export default function OrcamentoFotos() {
             secoundPrice={{ name: '50 fotos', price: 'R$ 500' }}
           />
 
-          <FormOrcamento />
+          <FormOrcamento form={form} type='fotos' handleSubmit={handleSubmit} />
         </div>
       </div>
       <Divider />

@@ -62,6 +62,7 @@ export const ContatoInfo = styled.div`
   }
   p {
     color: ${(props) => props.theme.colors.white};
+    cursor: pointer;
   }
 `
 
